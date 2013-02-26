@@ -63,6 +63,35 @@
 #   define ZMQ_ASSERT(expression) (expression)
 #endif
 
+
+/*
+ * TODO SRombauts 1 : use all the following functions (instead of deprecated ones) 
+ * TODO SRombauts 2 : switch at compile time between 2.2 and 3.2 functions
+ * TODO SRombauts 3 : encapsulation of zmq_proxy without void* : proxy(socket&, socket&, socket&) 
+ * TODO SRombauts 4 : real encapsulation of zmq_poll
+ * TODO SRombauts 5 : encapsulation for multi-part messages in a new class
+ * TODO SRombauts 6 : provide some C++ style, like streams or type conversion
+ * TODO SRombauts 7 : see what high level C binding do (czmq)
+ * TODO SRombauts 8 : see what other C++ binding do (zmqpp and zmqmessage)
+ * TODO SRombauts 9 : redefine in the namespace all constants from zmq.h, for easy access ?
+ 
+zmq_ctx_destroy - destroy a 0MQ context
+zmq_ctx_get - get context options
+zmq_ctx_new - create new 0MQ context
+zmq_ctx_set - set context options
+
+zmq_disconnect - Disconnect a socket
+
+zmq_msg_get - get message property
+zmq_msg_more - indicate if there are more message parts to receive
+zmq_msg_set - set message property
+zmq_poll - input/output multiplexing
+zmq_proxy - start built-in 0MQ proxy
+zmq_socket_monitor - register a monitoring callback
+zmq_unbind - Stop accepting connections on a socket
+*/
+
+
 namespace zmq
 {
 
@@ -313,6 +342,9 @@ namespace zmq
             close();
         }
 
+        //  Be careful with this, it's probably only useful for
+        //  using the C api together with an existing C++ api.
+        //  Normally you should never need to use this.
         inline operator void* ()
         {
             return ptr;
