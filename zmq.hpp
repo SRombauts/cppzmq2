@@ -426,9 +426,9 @@ namespace zmq
             throw error_t ();
         }
 
-        inline bool recv (message_t *msg_, int flags_ = 0)
+        inline bool recv (message_t& msg_, int flags_ = 0)
         {
-            int nbytes = zmq_msg_recv (&(msg_->msg), ptr, flags_);
+            int nbytes = zmq_msg_recv (&(msg_.msg), ptr, flags_);
             if (nbytes >= 0)
                 return true;
             if (zmq_errno () == EAGAIN)
