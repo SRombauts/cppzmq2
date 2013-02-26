@@ -65,16 +65,19 @@
 
 
 /*
- * TODO SRombauts 1 : use all the following functions (instead of deprecated ones) 
- * TODO SRombauts 2 : switch at compile time between 2.2 and 3.2 functions
- * TODO SRombauts 3 : encapsulation of zmq_proxy without void* : proxy(socket&, socket&, socket&) 
- * TODO SRombauts 4 : real encapsulation of zmq_poll
- * TODO SRombauts 5 : encapsulation for multi-part messages in a new class
- * TODO SRombauts 6 : provide some C++ style, like streams or type conversion
- * TODO SRombauts 7 : see what high level C binding do (czmq)
- * TODO SRombauts 8 : see what other C++ binding do (zmqpp and zmqmessage)
- * TODO SRombauts 9 : redefine in the namespace all constants from zmq.h, for easy access ?
- * TODO SRombauts 10 : add general documentation in the README and here
+ * TODO SRombauts : Doygen documentation !
+ * TODO SRombauts : message_t() ctor embedding the memcopy() (vs the zerocopy)
+ * TODO SRombauts : message_t() ctor zerocopy with a provided free_fn (using delete)
+ * TODO SRombauts : use all the following functions (instead of deprecated ones)
+ * TODO SRombauts : switch at compile time between 2.2 and 3.2 functions
+ * TODO SRombauts : encapsulation of zmq_proxy without void* : proxy(socket&, socket&, socket&)
+ * TODO SRombauts : real encapsulation of zmq_poll
+ * TODO SRombauts : encapsulation for multi-part messages in a new class
+ * TODO SRombauts : provide some C++ style, like streams or type conversion
+ * TODO SRombauts : see what high level C binding do (czmq)
+ * TODO SRombauts : see what other C++ binding do (zmqpp and zmqmessage)
+ * TODO SRombauts : redefine in the namespace all constants from zmq.h, for easy access ?
+ * TODO SRombauts : add general documentation in the README and here
  
 zmq_ctx_destroy - destroy a 0MQ context
 zmq_ctx_get - get context options
