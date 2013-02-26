@@ -74,6 +74,7 @@
  * TODO SRombauts 7 : see what high level C binding do (czmq)
  * TODO SRombauts 8 : see what other C++ binding do (zmqpp and zmqmessage)
  * TODO SRombauts 9 : redefine in the namespace all constants from zmq.h, for easy access ?
+ * TODO SRombauts 10 : add general documentation in the README and here
  
 zmq_ctx_destroy - destroy a 0MQ context
 zmq_ctx_get - get context options
