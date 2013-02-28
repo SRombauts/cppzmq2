@@ -98,6 +98,77 @@ zmq_unbind - Stop accepting connections on a socket
 
 namespace zmq
 {
+    /******************************************************************************/
+    /*  0MQ socket definition.                                                    */
+    /******************************************************************************/
+
+    /*  Socket types.                                                             */
+    enum socket_types
+    {
+        PAIR = ZMQ_PAIR, // 0
+        PUB = ZMQ_PUB,  // 1
+        SUB = ZMQ_SUB,  // 2
+        REQ = ZMQ_REQ,  // 3
+        REP = ZMQ_REP,  // 4
+        DEALER = ZMQ_DEALER, // 5
+        ROUTER = ZMQ_ROUTER, // 6
+        PULL = ZMQ_PULL, // 7
+        PUSH = ZMQ_PUSH, // 8
+        XPUB = ZMQ_XPUB, // 9
+        XSUB = ZMQ_XSUB  // 10
+    };
+
+    /*  Socket options.                                                           */
+    enum socket_options
+    {
+        AFFINITY = ZMQ_AFFINITY, // 4
+        IDENTITY = ZMQ_IDENTITY, // 5
+        SUBSCRIBE = ZMQ_SUBSCRIBE, // 6
+        UNSUBSCRIBE = ZMQ_UNSUBSCRIBE, // 7
+        RATE = ZMQ_RATE, // 8
+        RECOVERY_IVL = ZMQ_RECOVERY_IVL, // 9
+        SNDBUF = ZMQ_SNDBUF, // 11
+        RCVBUF = ZMQ_RCVBUF, // 12
+        RCVMORE = ZMQ_RCVMORE, // 13
+        FD = ZMQ_FD, // 14
+        EVENTS = ZMQ_EVENTS, // 15
+        TYPE = ZMQ_TYPE, // 16
+        LINGER = ZMQ_LINGER, // 17
+        RECONNECT_IVL = ZMQ_RECONNECT_IVL, // 18
+        BACKLOG = ZMQ_BACKLOG, // 19
+        RECONNECT_IVL_MAX = ZMQ_RECONNECT_IVL_MAX, // 21
+        MAXMSGSIZE = ZMQ_MAXMSGSIZE, // 22
+        SNDHWM = ZMQ_SNDHWM, // 23
+        RCVHWM = ZMQ_RCVHWM, // 24
+        MULTICAST_HOPS = ZMQ_MULTICAST_HOPS, // 25
+        RCVTIMEO = ZMQ_RCVTIMEO, // 27
+        SNDTIMEO = ZMQ_SNDTIMEO, // 28
+        IPV4ONLY = ZMQ_IPV4ONLY, // 31              /*  Request replacement by IPV6          */
+        LAST_ENDPOINT = ZMQ_LAST_ENDPOINT, // 32
+        ROUTER_MANDATORY = ZMQ_ROUTER_MANDATORY, // 33
+        TCP_KEEPALIVE = ZMQ_TCP_KEEPALIVE, // 34
+        TCP_KEEPALIVE_CNT = ZMQ_TCP_KEEPALIVE_CNT, // 35
+        TCP_KEEPALIVE_IDLE = ZMQ_TCP_KEEPALIVE_IDLE, // 36
+        TCP_KEEPALIVE_INTVL = ZMQ_TCP_KEEPALIVE_INTVL, // 37
+        TCP_ACCEPT_FILTER = ZMQ_TCP_ACCEPT_FILTER, // 38
+        DELAY_ATTACH_ON_CONNECT = ZMQ_DELAY_ATTACH_ON_CONNECT, // 39
+        XPUB_VERBOSE = ZMQ_XPUB_VERBOSE, // 40
+        ROUTER_RAW = ZMQ_ROUTER_RAW, // 41
+        IPV6 = ZMQ_IPV6 // 42
+    };
+
+    /*  Message options                                                           */
+    enum message_options
+    {
+        MORE = ZMQ_MORE // 1
+    };
+
+    /*  Send/recv options.                                                        */
+    enum send_recv_options
+    {
+        DONTWAIT = ZMQ_DONTWAIT, // 1
+        SNDMORE = ZMQ_SNDMORE // 2
+    };
 
     typedef zmq_free_fn free_fn;
     typedef zmq_pollitem_t pollitem_t;
