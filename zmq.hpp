@@ -66,7 +66,7 @@
 
 /*
  * TODO SRombauts : Doygen documentation !
- * TODO SRombauts : message_t() ctor embedding the memcopy() (vs the zerocopy)
+ * TODO SRombauts : dump() message in ascii and hexadecimal
  * TODO SRombauts : message_t() ctor zerocopy with a provided free_fn (using delete)
  * TODO SRombauts : use all the following functions (instead of deprecated ones)
  * TODO SRombauts : switch at compile time between 2.2 and 3.2 functions
@@ -329,6 +329,12 @@ namespace zmq
         inline size_t size () const
         {
             return zmq_msg_size (const_cast<zmq_msg_t*>(&msg));
+        }
+
+        inline std::string string() const
+        {
+            std::string string;
+            return string.assign((const char*)data(), size());
         }
 
     private:
