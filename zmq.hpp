@@ -234,6 +234,14 @@ namespace zmq
                 throw error_t ();
         }
 
+        inline explicit message_t (void *data_, size_t size_)
+        {
+            int rc = zmq_msg_init_size (&msg, size_);
+            if (rc != 0)
+                throw error_t ();
+            memcpy (data(), data_, size_);
+        }
+
         inline message_t (void *data_, size_t size_, free_fn *ffn_,
             void *hint_ = NULL)
         {
